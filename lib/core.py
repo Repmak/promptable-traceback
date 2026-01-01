@@ -19,12 +19,15 @@ def get_code_context(func, target_line_num, window_size):
         start = max(start_line, target_line_num - window_size)
         end = min(end_line, target_line_num + window_size)
 
+        # Padding based on largest line number.
+        max_num_width = len(str(end))
+
         context_lines = []
         for i, line in enumerate(lines):
             current_line_no = start_line + i
             if start <= current_line_no <= end:
-                prefix = ">> " if current_line_no == target_line_num else "   "
-                context_lines.append(f"{current_line_no}{prefix}{line.rstrip()}")
+                prefix = " >> " if current_line_no == target_line_num else "    "
+                context_lines.append(f"{current_line_no:>{max_num_width}}{prefix}{line.rstrip()}")
 
         return "\n".join(context_lines)
     except Exception:
@@ -45,13 +48,16 @@ def get_file_context(filename, target_line_num, window_size):
     start = max(1, target_line_num - window_size)
     end = target_line_num + window_size
 
+    # Padding based on largest line number.
+    max_num_width = len(str(end))
+
     context_lines = []
     for i in range(start, end + 1):
         line = linecache.getline(filename, i)
         if not line:
             break
-        prefix = ">> " if i == target_line_num else "   "
-        context_lines.append(f"{i}{prefix}{line.rstrip()}")
+        prefix = " >> " if i == target_line_num else "    "
+        context_lines.append(f"{i:>{max_num_width}}{prefix}{line.rstrip()}")
 
     return "\n".join(context_lines)
 
