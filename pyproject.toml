@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "promptable-traceback"
-version = "0.1.2"
+version = "0.1.0"
 description = "Python package that converts tracebacks into LLM-optimised prompts."
 readme = "README.md"
 authors = [
