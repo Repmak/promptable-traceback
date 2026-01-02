@@ -10,9 +10,9 @@ from .core import get_code_context, get_file_context, serialise_state
 # todo: imported package versions, print obj instances by value rather than reference
 
 # Enables Windows terminal to support ANSI codes.
-# if platform.system() == "Windows":
-#     os.system('')
-os.system('')
+if platform.system() == "Windows":
+    os.system('')
+
 
 YELLOW = "\033[33m"
 RED = "\033[31m"
