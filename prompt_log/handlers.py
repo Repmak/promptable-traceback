@@ -8,6 +8,8 @@ from .core import get_code_context, get_file_context, serialise_state
 
 
 # Enables Windows terminal to support ANSI codes.
+# if platform.system() == "Windows":
+#     os.system('')
 os.system('')
 
 YELLOW = "\033[33m"

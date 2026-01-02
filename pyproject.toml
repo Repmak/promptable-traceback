@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prompt-log"
+version = "0.1.0"
+description = "Tool that converts error logs to LLM prompts."
+readme = "README.md"
+authors = [
+  { name="Justin Kamper", email="justinjkamper@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages = ["prompt_log"]

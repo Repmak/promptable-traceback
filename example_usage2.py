@@ -1,4 +1,4 @@
-from lib import promptlog_global
+from prompt_log import promptlog_global
 
 promptlog_global(context_window=2)
 

@@ -1,4 +1,4 @@
-from lib import promptlog_local
+from prompt_log import promptlog_local
 
 
 @promptlog_local(context_window=5, mask_secrets=True)
