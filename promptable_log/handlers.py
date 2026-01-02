@@ -21,7 +21,7 @@ DEFAULT_CONTEXT_WINDOW = 25
 MASK_SECRETS = True
 
 
-def promptlog_local(context_window=DEFAULT_CONTEXT_WINDOW, mask_secrets=MASK_SECRETS):
+def catch(context_window=DEFAULT_CONTEXT_WINDOW, mask_secrets=MASK_SECRETS):
     """
     Decorator that captures program state upon an exception.
     :param context_window: Number of lines to capture around the error (bounded by start and end of the function the error occurred in).
@@ -59,7 +59,7 @@ def promptlog_local(context_window=DEFAULT_CONTEXT_WINDOW, mask_secrets=MASK_SEC
     return decorator
 
 
-def promptlog_global(context_window=DEFAULT_CONTEXT_WINDOW, mask_secrets=MASK_SECRETS):
+def hook(context_window=DEFAULT_CONTEXT_WINDOW, mask_secrets=MASK_SECRETS):
     """
     Overrides the system-wide exception hook to capture program state upon an exception.
     :param context_window: Number of lines to capture around the error (bounded by start and end of file).

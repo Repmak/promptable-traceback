@@ -1,6 +1,6 @@
-from prompt_log import promptlog_global
+from promptable_log import hook
 
-promptlog_global(context_window=2)
+hook(context_window=2)
 
 
 def useless_func(var1, var2):

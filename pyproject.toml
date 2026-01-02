@@ -17,4 +17,4 @@ classifiers = [
 ]
 
 [tool.setuptools]
-packages = ["prompt_log"]
+packages = ["promptable_log"]

@@ -1,7 +1,7 @@
-from prompt_log import promptlog_local
+from promptable_log import catch
 
 
-@promptlog_local(context_window=5, mask_secrets=True)
+@catch(context_window=5, mask_secrets=True)
 def useless_func(var1, var2):
     print(var1, var2)
     var1 = int(var1)  # trigger some error
